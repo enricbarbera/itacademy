@@ -1,0 +1,25 @@
+<?php
+    $X=23;
+    $Y=62;
+    $M=23.78;
+    $N=72.98;
+    echo"Valor primera variable sencera: ",$X,"\n";
+    echo"Valor segona variable sencera: ",$Y,"\n";
+    echo"Valor de la suma: ",$X," + ",$Y," = ",$X+$Y,"\n";
+    echo"Valor de la resta: ",$X," - ",$Y," = ",$X-$Y,"\n";
+    echo"Valor del producte: ",$X," * ",$Y," = ",$X*$Y,"\n";
+    echo"Valor de la divisió: ",$X," / ",$Y," = ",$X/$Y,"\n";
+    echo"Valor del módul: ",$X," % ",$Y," = ",$X%$Y,"\n";
+    echo"Valor primera variable decimal: ",$M,"\n";
+    echo"Valor segona variable decimal: ",$N,"\n";
+    echo"Valor de la suma: ",$M," + ",$N," = ",$M+$N,"\n";
+    echo"Valor de la resta: ",$M," - ",$N," = ",$M-$N,"\n";
+    echo"Valor del producte: ",$M," * ",$N," = ",$M*$N,"\n";
+    echo"Valor de la divisió: ",$M," / ",$N," = ",$M/$N,"\n";
+    echo"Valor del módul: ",$M," % ",$N," = ",$M%$N,"\n";
+    echo"2 * ",$X," = ",2*$X,"\n";
+    echo"2 * ",$Y," = ",2*$Y,"\n";
+    echo"2 * ",$N," = ",2*$N,"\n";
+    echo"2 * ",$M," = ",2*$M,"\n";
+    echo$X," + ",$Y," + ",$M," + ",$N," = ",$X+$Y+$M+$N,"\n";
+    echo$X," * ",$Y," * ",$M," * ",$N," = ",$X*$Y*$M*$N,"\n";

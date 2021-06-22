@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+            /* Make the image fully responsive */
+
+            /*        .carousel{
+                        width: 70%;
+                        margin: auto;
+                    }*/
+
+            .carousel-inner img {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <title>M4 - Segones Lectures</title>
+    </head>
+    <body class="bg-warning" style="width: 100%;">
+
+        <!--BARRA DE NAVEGACIÓ 1-->
+
+        <nav class="navbar navbar-expand navbar-dark bg-light" style="box-shadow: 0 2px 2px rgba(0,0,0,.05);">
+            <div class="container">
+
+                <!--LOGO-->
+
+                <a class="navbar-brand mt-0 pt-0" href="#"><img src="img/logo_petit.png" alt="logo" style="width: 60px;"></a>
+
+                <!--MENÚ ENTRADA/REGISTRE-->
+                
+                <div class="ml-auto">
+                    <a class="btn btn-warning btn-sm text-white" data-toggle="modal" data-target="#entrar">Entrar</a>
+                    <a class="btn btn-warning btn-sm text-white" data-toggle="modal" data-target="#registre">Registre</a>
+                </div>
+                <!--        
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a href="#" class="btn btn-sm font-weight-bolder" role="button" style="background:orange;">Entrar</a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="#" class="btn btn-sm font-weight-bolder" role="button">Registre</a>
+                          </li>
+                        </ul>
+                -->
+            </div>
+        </nav>
+        
+        <!--FINESTRES MODALS-->
+                
+        <div class="modal text-warning" id="entrar">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Entreu les vostres dades d'accés</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/action_page.php">
+                          <div class="form-group">
+                            <label for="access-email">Email:</label>
+                            <input type="email" class="form-control" id="access-email" placeholder="exemple@email.com" name="email">
+                          </div>
+                          <div class="form-group">
+                            <label for="access-pwd">Contrassenya:</label>
+                            <input type="password" class="form-control" id="access-pwd" placeholder="········" name="pswd">
+                          </div>
+                          <div class="form-group form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" name="remember"> Recordar
+                            </label>
+                          </div>
+                          <button type="submit" class="btn btn-warning">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+        <div class="modal text-warning" id="registre">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Introduïu dades de registre</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/action_page.php">
+                          <div class="form-group">
+                            <label for="nom">Nom:</label>
+                            <input type="text" class="form-control" id="nom" placeholder="Dolores" name="nom">
+                          </div>
+                          <div class="form-group">
+                            <label for="cognoms">Cognoms:</label>
+                            <input type="text" class="form-control" id="cognoms" placeholder="Fuertes de Barriga" name="cognoms">
+                          </div>
+                          <div class="form-group">
+                            <label for="register-email">Email:</label>
+                            <input type="email" class="form-control" id="register-email" placeholder="exemple@email.com" name="email">
+                          </div>
+                          <div class="form-group">
+                            <label for="register-pwd">Contrassenya:</label>
+                            <input type="password" class="form-control" id="register-pwd" placeholder="········" name="pswd">
+                          </div>
+                          <button type="submit" class="btn btn-warning">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--BARRA DE NAVEGACIÓ 2-->
+
+        <nav class="navbar navbar-expand-sm navbar-dark" style="box-shadow: 0 2px 2px rgba(255,255,255,.25);">
+            <div class="container">
+
+                <!--BOTÓ MENÚ COLLAPSED-->
+
+                <button class="navbar-toggler m-auto border border-light border-2 p-0" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="width:30px; height:30px;">
+                    <span class="navbar-toggler-icon mw-100 mh-100"></span>
+                </button>
+
+                <!--MENÚ-->
+                
+                <div class="collapse navbar-collapse text-center" id="collapsibleNavbar">
+                    <ul class="navbar-nav  m-auto">
+                        <li class="nav-item">
+                            <a class="nav-link display-6 font-weight-bolder d-inline-block" href="#">Link1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link display-6 font-weight-normal d-inline-block" href="#">Link2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link display-6 font-weight-lighter d-inline-block" href="#">Link3</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+        <!--PASSI FOTOS-->
+
+        <div id="demo" class="carousel slide pb-3" data-ride="carousel">
+
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
+            </ul>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/opt/destacat-5-mesllarg.png" alt="">
+                    <div class="carousel-caption btn btn-warning p-1">
+                      <h4 class=" font-weight-lighter text-white" style="text-shadow: 2px 2px 4px #000000;">Clubs de lectura presencials i virtuals</h4>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/opt/destacat-6-mesllarg.jpg" alt="">
+                    <div class="carousel-caption btn btn-warning p-1">
+                      <h4 class=" font-weight-lighter text-white" style="text-shadow: 2px 2px 4px #000000;">Cerques on-line per títol i/o autor</h4>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/opt/destacat-7-mesllarg.jpg" alt="">
+                    <div class="carousel-caption btn btn-warning p-1">
+                      <h4 class=" font-weight-lighter text-white" style="text-shadow: 2px 2px 4px #000000;">Milions de títols disponibles</h4>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/opt/destacat-8-mesllarg.jpg" alt="">
+                    <div class="carousel-caption btn btn-warning p-1">
+                      <h4 class=" font-weight-lighter text-white" style="text-shadow: 2px 2px 4px #000000;">Entregues gratuïtes a domicili</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+
+        <!--CONTENIDOR-->
+
+        <div class="container-fluid text-center">
+        
+        <!--CONTINGUT EN GRID RESPONSIVA-->
+            <!--    
+                <h1>Segones <kbd>Lectures</kbd></h1>
+                <p class="kbd">La <kbd>lectura</kbd> ens fa <kbd>llibres</kbd></p>
+            -->
+            <div class="row text-white p-3">
+                <div class="col-12 col-sm-4">
+                    <img src="img/opt/destacat-5.png" alt="" class="img-fluid border border-light border-5">
+                    <h5 class="pt-1 font-weight-lighter" style="text-shadow: 1px 1px 2px #000000;">Novetats Editorials</h5>
+                    <a class="btn btn-outline-light mb-3 pt-0 pb-1 font-weight-lighter" href="#" role="button">Entrar</a>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <img src="img/opt/destacat-6.jpg" alt="" class="img-fluid border border-light border-5">
+                    <h5 class="pt-1 font-weight-lighter" style="text-shadow: 1px 1px 2px #000000;">Club de Lectura</h5>
+                    <a class="btn btn-outline-light mb-3 pt-0 pb-1 font-weight-lighter" href="#" role="button">Entrar</a>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <img src="img/opt/destacat-7.jpg" alt="" class="img-fluid border border-light border-5">
+                    <h5 class="pt-1 font-weight-lighter" style="text-shadow: 1px 1px 2px #000000;">Accés socis</h5>
+                    <a class="btn btn-outline-light mb-3 pt-0 pb-1 font-weight-lighter" href="#" role="button">Entrar</a>
+                </div>
+            </div>
+        
+        <!--SEGON CONTINGUT EN GRID RESPONSIVA-->
+            <div class="row text-white p-3">
+                <div class="col-12 col-sm-3 bg-light text-muted">
+                    <h1>Títol1</h1> 
+                    <p class="text-justify text-sm-left text-lg-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in lobortis augue, ut consectetur elit. Duis tincidunt lobortis justo ut semper. Nulla hendrerit iaculis pharetra. Sed imperdiet urna nec condimentum congue. Fusce efficitur blandit euismod. Aenean iaculis tortor in maximus dapibus. In auctor et dui sed bibendum. Maecenas porttitor odio a dolor placerat vulputate. Maecenas at orci id urna tristique condimentum. Donec maximus sapien a accumsan lacinia.</p>
+                </div>
+                <div class="col-12 col-sm-6 bg-dark">
+                    <h1>Títol2</h1> 
+                    <p class="text-justify text-sm-left text-lg-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in lobortis augue, ut consectetur elit. Duis tincidunt lobortis justo ut semper. Nulla hendrerit iaculis pharetra. Sed imperdiet urna nec condimentum congue. Fusce efficitur blandit euismod. Aenean iaculis tortor in maximus dapibus. In auctor et dui sed bibendum. Maecenas porttitor odio a dolor placerat vulputate. Maecenas at orci id urna tristique condimentum. Donec maximus sapien a accumsan lacinia.</p>
+                </div>
+                <div class="col-12 col-sm-3 bg-light text-muted">
+                    <h1>Títol3</h1> 
+                    <p class="text-justify text-sm-left text-lg-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in lobortis augue, ut consectetur elit. Duis tincidunt lobortis justo ut semper. Nulla hendrerit iaculis pharetra. Sed imperdiet urna nec condimentum congue. Fusce efficitur blandit euismod. Aenean iaculis tortor in maximus dapibus. In auctor et dui sed bibendum. Maecenas porttitor odio a dolor placerat vulputate. Maecenas at orci id urna tristique condimentum. Donec maximus sapien a accumsan lacinia.</p>
+                </div>
+            </div>
+            
+            <!--MOSTRES MODIFICACIÓ PALETA COLORS-->
+            
+            <div class="row text-white p-3 w-50 mx-auto">
+                <div class="col-12 bg-light text-light" style="height: 25px;">MOSTRA 1</div>
+                <div class="col-12 bg-primary text-primary" style="height: 25px;">MOSTRA 2</div>
+                <div class="col-12 bg-secondary text-secondary" style="height: 25px;">MOSTRA 3</div>
+                <div class="col-12 bg-info text-info" style="height: 25px;">MOSTRA 4</div>
+                <div class="col-12 bg-success text-success" style="height: 25px;">MOSTRA 5</div>
+                <div class="col-12 bg-warning text-warning" style="height: 25px;">MOSTRA 6</div>
+                <div class="col-12 bg-danger text-danger" style="height: 25px;">MOSTRA 7</div>
+                <div class="col-12 bg-dark text-dark" style="height: 25px;">MOSTRA 8</div>
+            </div>
+            <button class="btn btn-light">BTN LIGHT</button>
+            <button class="btn btn-primary">BTN PRIMARY</button>
+            <button class="btn btn-secondary">BTN SECONDARY</button>
+            <button class="btn btn-info">BTN INFO</button>
+            <button class="btn btn-success">BTN SUCCESS</button>
+            <button class="btn btn-warning">BTN WARNING</button>
+            <button class="btn btn-danger">BTN DANGER</button>
+            <button class="btn btn-dark">BTN DARK</button>
+        </div>
+    </body>
+</html>

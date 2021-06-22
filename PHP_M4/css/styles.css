@@ -1,0 +1,95 @@
+h5{
+    font-size: 20px;
+}
+
+@include media-breakpoint-up(sm) {
+  h5 {
+    font-size: 10px;
+  }
+}
+
+.text-light{
+    color: #111111 !important;
+}
+.text-primary{
+    color: #333333 !important;
+}
+.text-secondary{
+    color: #555555 !important;
+}
+.text-info{
+    color: #777777 !important;
+}
+.text-success{
+    color: #999999 !important;
+}
+.text-warning{
+    color: #bbbbbb !important;
+}
+.text-danger{
+    color: #dddddd !important;
+}
+.text-dark{
+    color: #eeeeee !important;
+}
+.bg-light{
+    background: #eeeeee !important;
+}
+.bg-primary{
+    background: #dddddd !important;
+}
+.bg-secondary{
+    background: #bbbbbb !important;
+}
+.bg-info{
+    background: #999999 !important;
+}
+.bg-success{
+    background: #777777 !important;
+}
+.bg-warning{
+    background: #555555 !important;
+}
+.bg-danger{
+    background: #333333 !important;
+}
+.bg-dark{
+    background: #111111 !important;
+}
+.btn-light{
+    background: #eeeeee !important;
+    border-color: #000000;
+}
+.btn-primary{
+    background: #dddddd !important;
+    border-color: #000000;
+}
+.btn-secondary{
+    background: #bbbbbb !important;
+    border-color: #000000;
+}
+.btn-info{
+    background: #999999 !important;
+    border-color: #000000;
+}
+.btn-success{
+    background: #777777 !important;
+    border-color: #000000;
+}
+.btn-warning{
+    background: #555555 !important;
+    border-color: #000000;
+}
+.btn-danger{
+    background: #333333 !important;
+    border-color: #000000;
+}
+.btn-dark{
+    background: #111111 !important;
+    border-color: #000000;
+}
+.btn-light:hover {
+  color: #FFF;
+  background: #111111;
+  border-color: #ffffff;
+}

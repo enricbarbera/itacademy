@@ -1,0 +1,70 @@
+-- filtrat vendes per import
+SELECT * FROM vendes WHERE import >= 300;
+
+-- filtratges i ordenacions per data
+SELECT * FROM vendes WHERE data >= 20210704;
+SELECT * FROM vendes ORDER BY data;
+
+-- diferents maneres de filtrar per id
+SELECT * FROM vendes WHERE id_venedor = 2;
+SELECT * FROM vendes WHERE id_venedor = 2 OR id_venedor = 3;
+SELECT * FROM vendes WHERE id_venedor IN (2,3);
+SELECT * FROM vendes WHERE id_venedor BETWEEN 2 AND 3;
+SELECT * FROM vendes WHERE id_venedor IN (1,4);
+
+-- incloent ordenació per dates
+SELECT * FROM vendes WHERE id_venedor NOT IN (1,4) ORDER BY data;
+
+-- rang d'imports ordenat
+SELECT * FROM vendes WHERE import BETWEEN 200 AND 500 ORDER BY import;
+
+-- filtrat de marques per proveïdor
+SELECT * FROM marques WHERE id_proveïdor = 1;
+
+-- cerca de proveïdor per id de marca juntant taules "marques" i "proveïdors"
+SELECT id_marca, marques.nom AS marca, proveïdors.nom AS proveïdor FROM marques
+JOIN proveïdors
+ON marques.id_proveïdor = proveïdors.id_proveïdor
+WHERE marques.id_marca IN (1,3);
+
+-- Si es vulgués aplicar condicó segons id_proveïdor enlloc de id_marca
+-- WHERE proveïdors.id_proveïdor IN (1,3);
+
+-- selecció incloent operació entre 2 camps i ordenat segons un d'ells
+SELECT * FROM ulleres WHERE grad_dreta + grad_esquerra >= 5 ORDER BY grad_dreta DESC;
+
+-- limitant els camps mostrats a l'anterior, afegint un camp suma, i ordenant pel resultat de la suma
+SELECT id_ullera, marca, grad_dreta, grad_esquerra, grad_dreta + grad_esquerra AS 'suma graduacions'
+FROM ulleres
+WHERE grad_dreta + grad_esquerra >= 5
+ORDER BY grad_dreta + grad_esquerra DESC;
+
+-- diferents proves condiconals
+SELECT marca, color_montura, tipus_montura FROM ulleres WHERE tipus_montura != 'metàlica';
+SELECT * FROM vendes WHERE import >= 300 AND id_venedor = 2;
+SELECT * FROM vendes WHERE import >= 300 AND NOT id_venedor = 2;
+SELECT * FROM vendes WHERE import >= 300 AND NOT id_venedor != 2;
+
+-- juntem "vendes" i "clients" per extreure el mombre de compres i l'import total de cada client
+SELECT nom, cognom, COUNT(vendes.id_client) AS 'número compres', SUM(import) AS 'import total'
+FROM clients
+JOIN vendes
+ON clients.id_client = vendes.id_client
+GROUP BY vendes.id_client;
+
+-- concatenem les columes "nom" i "cognom" per buscar un client
+SELECT adreça FROM clients WHERE CONCAT (nom, ' ', cognom) LIKE 'SILVIA valle';
+SELECT COUNT(id_venda), id_venedor FROM vendes GROUP BY id_venedor ORDER BY COUNT(id_venda) DESC;
+SELECT COUNT(id_venda), vendes.id_venedor FROM vendes INNER JOIN venedors ON venedors.id_venedor = vendes.id_venedor GROUP BY id_venedor ORDER BY COUNT(id_venda) DESC;
+
+-- juntem taules "vendes" i "venedors"
+SELECT * FROM vendes INNER JOIN venedors ON venedors.id_venedor = vendes.id_venedor;
+
+-- extraiem de la unió de les taules "vendes" i "venedors" la quantitat de vendes efectuades per cada venedor
+-- i la suma dels imports corresponents, utilitzant àlies de columna per millor comprensió
+SELECT venedors.nom, COUNT(id_venda) AS 'vendes realitzades', SUM(import) AS 'import total'
+FROM vendes
+INNER JOIN venedors
+ON venedors.id_venedor = vendes.id_venedor
+GROUP BY vendes.id_venedor
+ORDER BY COUNT(id_venda) DESC;

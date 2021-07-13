@@ -1,0 +1,35 @@
+-- filtrats diversos de comandes amb diferents criteris (descomentar el que es vulgui aplicar)
+SELECT *
+FROM comandes
+-- WHERE modalitat = 'domicili'
+-- WHERE botigues_id_botiga = 1 OR treballadors_id_treballador IN (1,3)
+-- WHERE hora_entrega <= '2021-07-10 16:30:00'
+WHERE hora_entrega - hora_comanda <= 005000;
+
+-- treiem el nombre de productes diferents, la quantita total i l'import de cada comanda amb un doble JOIN, es podria filtrar per id de producte (comentat)
+SELECT c.id_comanda, COUNT(phc.comandes_id_comanda) AS 'num. productes', SUM(phc.quantitat) AS quant, SUM(phc.quantitat * p.preu) AS import
+FROM comandes c
+JOIN productes_has_comandes phc
+ON c.id_comanda = phc.comandes_id_comanda
+JOIN productes p
+ON p.id_producte = phc.productes_id_producte
+-- WHERE c.id_comanda = 1
+GROUP BY c.id_comanda;
+
+-- nombre de clients a cada provícia 
+SELECT p.nom, COUNT(l.províncies_id_província) AS 'nombre clients'
+FROM clients c
+JOIN localitats l
+ON c.id_localitat = l.id_localitat
+JOIN províncies p
+ON l.províncies_id_província = p.id_província
+GROUP BY p.id_província;
+
+-- llistat de clients amb localitat i província (doble join i order by)
+SELECT c.nom, l.nom AS 'localitat', p.nom AS 'província'
+FROM clients c
+JOIN localitats l
+ON c.id_localitat = l.id_localitat
+JOIN províncies p
+ON l.províncies_id_província = p.id_província
+ORDER BY p.id_província

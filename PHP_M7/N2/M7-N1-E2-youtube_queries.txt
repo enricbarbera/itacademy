@@ -1,0 +1,58 @@
+-- diferents filtres de la taula "videos" amb diferents criteris (descomentar el que es vulgui utilitzar)****************
+SELECT * FROM videos
+-- WHERE users_id_user = 1
+-- WHERE description LIKE '%for%'
+-- WHERE volume <= 600
+WHERE date_time <= '2021-06-01 00:00:00'
+-- ORDER BY likes DESC
+-- ORDER BY length DESC
+ORDER BY date_time DESC;
+
+-- seleccionar videos que incorporin una determinada etiqueta ****************************
+SELECT id_video, title, t.name AS 'tag name'
+FROM videos v
+JOIN videos_has_tags vht
+ON vht.videos_id_video = v.id_video
+JOIN tags t
+ON vht.tags_id_tag = t.id_tag
+-- WHERE vht.tags_id_tag = 1;
+WHERE vht.tags_id_tag = 3;
+
+-- seleccionar playlists contenint un determinat video (per id_video) ************************
+SELECT  v.title AS 'video title', id_playlist, name AS 'playlist name'
+FROM playlists p
+JOIN included i
+ON id_playlist = i.playlists_id_playlist
+JOIN videos v
+ON v.id_video = i.videos_id_video
+-- WHERE i.videos_id_video = 3
+WHERE i.videos_id_video = 4;
+
+-- seleccionar canals ordenats per data de creació i restringit per nom ********************
+SELECT *
+FROM channels
+WHERE name LIKE '%silvia%'
+ORDER BY date DESC;
+
+-- seleccionar canals seguits per determinats usuaris**************************************************
+SELECT name AS 'channel name', description, u.username AS 'seguit per'
+FROM channels c
+JOIN follow f
+ON id_channel = f.channels_id_channel
+JOIN users u
+ON id_user = f.users_id_user
+-- WHERE follow.users_id_user IN (1,4)
+WHERE f.users_id_user = 2
+ORDER BY id_channel;
+
+-- llsitar els canals que segueix cada usuari**********************************************************
+SELECT username, name AS 'follows'
+FROM users u
+JOIN follow f
+ON u.id_user = f.users_id_user
+JOIN channels c
+ON c.id_channel = f.channels_id_channel
+-- afegir un WHERE per seleccionar els seguidors d'un/s canal/s determinat/s**************************
+WHERE id_channel = 1
+-- WHERE id_channel IN (2,3)
+ORDER BY id_user;

@@ -5,25 +5,10 @@
     </head>
     <body>
         <div class="container">
-<!--        <form method="post" action="insereix.php">
-            <input type="submit" value="Afegir Nou Producte" class="boto">
-        </form>-->
         <?php
-//    class connexio{
-//        $mysql = new mysqli('localhost','root','Delbar1748!','m8_llistacompra',3307);
-//        if ($mysql->connect_error) {
-//            die("Fallo al conectar a MySQL");
-//        }
-        //    else{
-        //        echo "ok";
-        //    }
-//        function connectar(){
-//            $mysql = mysqli_connect('localhost','root','Delbar1748!','m8_llistacompra',3307);
-//        }
-//    }
-//        $mysql = new connexio;
-//        $mysql->connectar();
-        $mysql = mysqli_connect('localhost', 'root', 'Delbar1748!', 'm8_llistacompra', 3307);
+        require_once 'db_connection.php';
+        $connexio = new Connexio();
+        $mysql = $connexio->connectar();
         
         //**************ESBORRO TOTS ELS ELEMENTS DE LA TAULA PQ NO  ES REPETEIXIN A CADA REFRESCAT DE LA PÀGINA**********
 
@@ -56,11 +41,12 @@
                 echo '<th></th><th></th>';
                 echo '</tr>';
                 while ($r = $resultat->fetch_array()) {
-                    if ($r['id'] % 2 == 0) {
-                        echo '<tr><td>';
-                    } else {
-                        echo '<tr class="fosc"><td>';
-                    }
+//                    if ($r['id'] % 2 == 0) {
+//                        echo '<tr><td>';
+//                    } else {
+//                        echo '<tr class="fosc"><td>';
+//                    }
+                    echo '<tr><td>';
                     echo $r['id'];
                     echo '</td>';
                     echo '<td>';
@@ -99,7 +85,7 @@
 //        $mysql->query("DELETE FROM compra");
         
         //*************TANCAMENT DE LA CONNEXIÓ AMB LA BASE DE DADES******************
-        $mysql->close();
+        $connexio->desconnectar($mysql);
         ?>
         
         </div>

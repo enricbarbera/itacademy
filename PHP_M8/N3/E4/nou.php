@@ -6,11 +6,13 @@
     <body>
         <div class="container">
         <?php
-            $mysql = mysqli_connect('localhost', 'root', 'Delbar1748!', 'm8_llistacompra', 3307);
+            require_once 'db_connection.php';
+            $connexio = new Connexio();
+            $mysql = $connexio->connectar();
             $mysql->query("INSERT INTO compra (nom, quantitat, preu) VALUES"
                     . "('$_REQUEST[nom]', '$_REQUEST[quantitat]', '$_REQUEST[preu]')");
             echo '<h3>Producte afegit a la llista.</h3>';
-            $mysql->close();
+            $connexio->desconnectar($mysql);
         ?>
         
         <h3><a href="index.php">Tornar a la llista</a></h3>

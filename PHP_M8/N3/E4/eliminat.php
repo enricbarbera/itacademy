@@ -6,11 +6,13 @@
     <body>
         <div class="container">
         <?php
+            require_once 'db_connection.php';
             $id = $_GET['id'];
-            $mysql = mysqli_connect('localhost', 'root', 'Delbar1748!', 'm8_llistacompra', 3307);
+            $connexio = new Connexio();
+            $mysql = $connexio->connectar();
             $mysql->query("DELETE from compra WHERE id = $id;");
             echo '<h3>Producte eliminat.</h3>';
-            $mysql->close();
+            $connexio->desconnectar($mysql);
         ?>
         
         <h3><a href="index.php">Tornar a la llista</a></h3>

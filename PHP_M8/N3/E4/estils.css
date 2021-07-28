@@ -76,7 +76,7 @@ tr {
     /*color: gray;*/
     background: #eeeeee;
 }
-tr.fosc {
+tr:nth-child(even) {
     /*color: black;*/
     background: lightgrey;
 }

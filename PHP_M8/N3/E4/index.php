@@ -80,7 +80,7 @@
                     echo '<div class="modificar"><a href="modificar.php?id='.$r['id'].';">modificar</a></div>';
                     echo '</td>';
                     echo '<td>';
-                    echo '<div class="eliminar"><a href="#">eliminar</a></div>';
+                    echo '<div class="eliminar"><a href="eliminar.php?id='.$r['id'].';">eliminar</a></div>';
                     echo '</td>';
                     echo '</tr>';
                 }

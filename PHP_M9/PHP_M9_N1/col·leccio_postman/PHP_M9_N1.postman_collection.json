@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "421e6d4c-cedb-48da-bc2b-ed86102984b4",
+		"name": "PHP_M9_N1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}",
+					"host": [
+						"{{ip}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pàgina 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/pagina1",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"pagina1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Impressió Nom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/pagina1/Enric",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"pagina1",
+						"Enric"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserció Dades",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/pagina1/create",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"pagina1",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pàgina 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/pagina2",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"pagina2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

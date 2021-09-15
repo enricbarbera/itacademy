@@ -3,10 +3,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Visualització països - pàgina show (?)</title>
+        <title>Visualització país - pàgina show (?)</title>
     </head>
     <body>
-        <!--<h2>Visualització països - pàgina show (?)</h2>-->
-        <h2><?php echo 'Nom Païs: '.$pais.' (extret de la url)' ?></h2>
+        <h2>SHOW</h2>
+        <h2>Visualització país - pàgina show (?)</h2>
+        <h2><?php echo 'Nom País: '.$pais.' (extret de la url)' ?></h2>
     </body>
 </html>

@@ -37,25 +37,25 @@
 			"response": []
 		},
 		{
-			"name": "Impressió Païs",
+			"name": "Impressió País",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{ip}}/paises/Nom Païs",
+					"raw": "{{ip}}/paises/Nom País",
 					"host": [
 						"{{ip}}"
 					],
 					"path": [
 						"paises",
-						"Nom Païs"
+						"Nom País"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Entrada Nou Païs",
+			"name": "Entrada Nou País",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -72,36 +72,36 @@
 			"response": []
 		},
 		{
-			"name": "Edició Païs",
+			"name": "Edició País",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "{{ip}}/paises/update",
+					"raw": "{{ip}}/paises/Nom País",
 					"host": [
 						"{{ip}}"
 					],
 					"path": [
 						"paises",
-						"update"
+						"Nom País"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Eliminació Païs",
+			"name": "Eliminació País",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{ip}}/paises/destroy",
+					"raw": "{{ip}}/paises/Nom País",
 					"host": [
 						"{{ip}}"
 					],
 					"path": [
 						"paises",
-						"destroy"
+						"Nom País"
 					]
 				}
 			},

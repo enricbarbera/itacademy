@@ -20,7 +20,7 @@
 			"response": []
 		},
 		{
-			"name": "Països",
+			"name": "Llistat Països",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -102,6 +102,106 @@
 					"path": [
 						"paises",
 						"Nom País"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Llistat Departaments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/paises/Nom País/departamentos/",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"paises",
+						"Nom País",
+						"departamentos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Impressió Departament",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/paises/Nom País/departamentos/Nom Departament",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"paises",
+						"Nom País",
+						"departamentos",
+						"Nom Departament"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Entrada Nou Departament",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/paises/Nom País/departamentos/",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"paises",
+						"Nom País",
+						"departamentos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edició Departament",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/paises/Nom País/departamentos/Nom Departament",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"paises",
+						"Nom País",
+						"departamentos",
+						"Nom Departament"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminació Departament",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/paises/Nom País/departamentos/Nom Departament",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"paises",
+						"Nom País",
+						"departamentos",
+						"Nom Departament"
 					]
 				}
 			},

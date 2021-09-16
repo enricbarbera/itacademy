@@ -6,8 +6,8 @@
         <title>Visualització país - pàgina show (?)</title>
     </head>
     <body>
-        <h2>SHOW</h2>
-        <h2>Visualització país - pàgina show (?)</h2>
-        <h2><?php echo 'Nom País: '.$pais.' (extret de la url)' ?></h2>
+        <h2>SHOW PAÏSOS</h2>
+        <h2>Visualització país - pàgina show</h2>
+        <h2><?php echo 'Nom País: '.$capturaPassada.' (extret de la url)' ?></h2>
     </body>
 </html>

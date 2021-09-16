@@ -16,8 +16,8 @@ class PaisController extends Controller{
 //        $pais->nom = $request->nom;
         return view('paises.store');
     }
-    public function show($pais) {
-        return view('paises.show', ['pais' => $pais]);
+    public function show($capturaUrl) {
+        return view('paises.show', ['capturaPassada' => $capturaUrl]);
     }
     public function update($pais) {
         return view('paises.update', ['pais' => $pais]);

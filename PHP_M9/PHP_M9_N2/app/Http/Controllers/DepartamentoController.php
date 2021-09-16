@@ -5,19 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class DepartamentoController extends Controller{
-    public function index(){
-        return view('paises.{pais}.departamentos.index');
+    public function index($capturaUrl){
+        return view('paises.departamentos.index', ['capturaPassada' => $capturaUrl]);
     }
-    public function store(){
-        return view('paises.{pais}.departamentos.store');
+    public function store($pais){
+        return view('paises.departamentos.store', ['pais' => $pais]);
     }
-    public function show(){
-        return view('paises.{pais}.departamentos.{departamento}.show');
+    public function show($primeraCaptura, $segonaCaptura){
+        return view('paises.departamentos.show', ['capturaPais' => $primeraCaptura, 'capturaDept' => $segonaCaptura]);
     }
-    public function update(){
-        return view('paises.{pais}.departamentos.{departamento}.update');
+    public function update($primeraCaptura, $segonaCaptura){
+        return view('paises.departamentos.update', ['capturaPais' => $primeraCaptura, 'capturaDept' => $segonaCaptura]);
     }
-    public function destroy(){
-        return view('paises.{pais}.departamentos.{departamento}.destroy');
+    public function destroy($primeraCaptura, $segonaCaptura){
+        return view('paises.departamentos.destroy', ['capturaPais' => $primeraCaptura, 'capturaDept' => $segonaCaptura]);
     }
 }

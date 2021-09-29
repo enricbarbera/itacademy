@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "c99282aa-a3bd-460d-a371-b40c3fa10df9",
+		"name": "PHP_M10",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}",
+					"host": [
+						"{{ip}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Llistat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/catalog/",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"catalog",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cerca",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/catalog/show/\"Id Llibre\"",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"catalog",
+						"show",
+						"\"Id Llibre\""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserció",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/catalog/create",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"catalog",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificació",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/catalog/edit/\"Id Llibre\"",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"catalog",
+						"edit",
+						"\"Id Llibre\""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}/login",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

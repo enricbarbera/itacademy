@@ -9,7 +9,7 @@
 </head>
 <body class="bg-light text-center pt-5">
     <h2 class="pt-5 pb-4">Login usuari</h2>
-    <form method="post" action="index">
+    <form method="get" action="index">
         @csrf
         <input name="name" placeholder="entra el nom d'usuari" class="text-center">
         <input name="pwd" placeholder="entra el password" class="text-center">

@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('login', [EmployeeController::class, 'login']);
 
-Route::post('index', [EmployeeController::class, 'index'])->name('llistatInici');
+Route::get('index', [EmployeeController::class, 'index'])->name('llistatInici');
 
 Route::get('create', [EmployeeController::class, 'create'])->name('nouRegistre');
 

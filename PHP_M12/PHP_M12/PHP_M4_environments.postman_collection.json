@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "cab66887-19ab-4f4c-b35a-3d394aa247a9",
+		"name": "PHP_M4_environments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Local Players CRUD",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ip}}:{{port}}/players",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"players"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Joan Miró",
+									"type": "text"
+								},
+								{
+									"key": "license",
+									"value": "44444444",
+									"type": "text"
+								},
+								{
+									"key": "team",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Pça Quintu, 33",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "joan@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ip}}:{{port}}/players/create",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"players",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ip}}:{{port}}/players/show/63",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"players",
+								"show",
+								"63"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Pepi",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Cal Quartu, 3",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "prp@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "license",
+									"value": "55555555",
+									"type": "text"
+								},
+								{
+									"key": "team",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ip}}:{{port}}/players/edit/57",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"players",
+								"edit",
+								"57"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ip}}:{{port}}/players/delete/57",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"players",
+								"delete",
+								"57"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

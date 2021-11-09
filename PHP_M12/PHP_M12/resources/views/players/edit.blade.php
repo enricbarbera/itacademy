@@ -9,7 +9,7 @@
         <div class="row justify-content-center mb-1">
             <div class="col-2">
                 <h5>Name</h5>
-                <input class="text-center w-100" name="name" value="{{$player->name}}">
+                <input class="text-center w-100" name="name" value="{{old('name', $player->name)}}">
             </div>
             <div class="col-2">
                 <h5>Address</h5>

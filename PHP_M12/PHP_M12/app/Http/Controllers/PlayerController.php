@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Models\Player;
 use App\Models\Team;
 
@@ -46,10 +47,14 @@ class PlayerController extends Controller
 
     public function update(Request $request, Player $player){
         $request->validate([
-            'name' => 'required|unique:players',
+            // 'name' => 'required'|Rule::unique('players')->ignore($player->id),
+            'name' => ['required', Rule::unique('players')->ignore($player->id)],
+            // 'name' => 'required|unique:players',
             'address' => 'nullable|string',
-            'email' => 'nullable|unique:players|email',
-            'license' => 'required|unique:players|digits:8',
+            // 'email' => 'nullable|unique:players|email',
+            'email' => ['nullable', Rule::unique('players')->ignore($player->id)],
+            // 'license' => 'required|unique:players|digits:8',
+            'license' => ['required', 'digits:8', Rule::unique('players')->ignore($player->id)],
             'team' => 'required|integer|between:1,4'
         ]);
         $player -> name = $request -> name;
